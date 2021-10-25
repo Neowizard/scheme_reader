@@ -9,7 +9,8 @@ Read the PDF file included in this repository to get the reader specifications a
 
 ## Git
 
-You'll be implmeneting this (and future) assignments by adding code to this Git repository.
+You'll be implmeneting this (and future) assignments by adding code to a Git repository. The first thing you need to 
+do is download and install a copy of [Git](https://git-scm.com/downloads).
 
 To get a local copy of your git repository, you need to enter the command `git clone <repository_url>`. Afterwards, the 
 general Git workflow for your work is: 
@@ -49,9 +50,9 @@ you can see the changes on GitHub.
 ## VM
 
 Since we'll be grading your work on a Linux machine, and since we wanted you all to use the same software versions as we 
-do for grading, we provide you with a VM. However, since setting up the VM for efficient use might take a little while, 
-and can be frustrating we'll be using two industry standard tools to supply this VM - VirtualBox and Vagrant. You've 
-used VirtualBox below, so we'll skip that bit.
+do for grading, we provide you with a VM. However, since setting up the VM for efficient use might take some effort, 
+and can be frustrating we'll be using two industry standard tools to run this VM - VirtualBox and Vagrant. You've used 
+VirtualBox before, so we'll skip that bit.
 
 ### Vagrant
 
@@ -60,13 +61,19 @@ sharing VMs. It includes the VM image, setup, configuration, network connections
 configure before you start working. The vagrantfile contains all the commands required to setup your VM.
 
 #### Using Vagrant
-First, download and install [Vagrant](https://www.vagrantup.com/downloads) for your OS (Supports Windows, Linux and Mac). 
-Next, open a terminal in the project's root directory (where this `README.md` file is stored) and run `vagrant up`.
+First, download and install [Vagrant](https://www.vagrantup.com/downloads) for your OS. Next, open a terminal in the 
+project's root directory (where this `README.md` file is stored) and run `vagrant up`. When running this command
+for the first time it might seem like it's stuck on "Downloading" for up to 3 hours, depending on your internet
+connection. It's not stuck. 
+
+Note: On windows, Vagrant doesn't give you any indication of download progress, so you can take a look in 
+`%HOMEPATH%/. vagrant.d/tmp` and see the file there that represents the downloading VM. Once it reaches 7GB, Vagrant
+will continue setting up your VM
 
 The `vagrant up` command will read the Vagrantfile, download the correct VM image, create the VM using VirtualBox, 
-create a shared folder between the VM and the host, setup an SSH connection between the two and start the VM. The first
-time you run `vagrant up` will take some time because it has to download a 7GB VM image. If you run `vagrant up` again, 
-Vagrant will use a local cache of the VM image, so it will run MUCH faster (less than a minute).
+create a shared folder between the VM and the host, setup an SSH connection between the VM and start the VM. The first
+time you run `vagrant up` the VM image it downloads is rather large (7GB). If you run `vagrant up` again (e.g. if to 
+rebuild your VM), Vagrant will use a local cache of the VM image, so it will run MUCH faster (less than a minute).
 
 To connect to your VM, you need to run `vagrant ssh`. This will open an SSH connection to your VM and provide you a 
 shell in which you can run your code. Note, the project's folder is mapped to `~/compiler` in the VM (when you log 
@@ -82,6 +89,10 @@ Note, if you don't want/can't use `vagrant destroy`, you need to delete the VM f
 ### Connecting to the VM graphically
 The VM created by `vagrant up` is a regular VM in VirtualBox, so if you'd like, you can just open up the VirtualBox
 dashboard, and double-click the relevant VM. The password for the Vagrant user is `vagrant`. 
+
+The VM comes with VScode, Intellij and Emacs all three with their Ocaml plugins. Also it comes preinstalled with Scheme, 
+Ocaml, utop, gcc, gdb, nasm and whatever tool we figured you might need to work on this and future assignments. Of course
+You can always install any other tool you like from the Ubuntu repositories with `apt install`
 
 ## Testing your assignment 
 
