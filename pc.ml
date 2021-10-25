@@ -12,6 +12,12 @@ let string_to_list string =
     else run (i - 1) (string.[i] :: s) in
   run (String.length string - 1) [];;
 
+let list_to_string s =
+  List.fold_left
+    (fun str ch -> str ^ (String.make 1 ch))
+    ""
+    s;;
+
 let rec ormap f s =
   match s with
   | [] -> false
@@ -151,7 +157,7 @@ module PC = struct
       | {index_from; index_to; found = None} -> raise X_no_match
       | {index_from; index_to; found = Some(e)} ->
          match (maybe nt2 str index) with
-         | {index_from; index_to; found = None} ->
+         | {index_from = _; index_to = _; found = None} ->
             {index_from; index_to; found = e}
          | _ -> raise X_no_match) : 'a parser);;
 
