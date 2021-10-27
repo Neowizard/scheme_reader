@@ -24,7 +24,7 @@ match sexpr with
                         (sexpr_to_scheme_str car) 
                         (sexpr_to_scheme_str cdr);;
 
-let input_file = "tests/cases/my_test.scm" (*Sys.argv.(1);;*)
+let input_file = Sys.argv.(1);;
 
 let read_test_file file = 
 let channel = open_in file in
