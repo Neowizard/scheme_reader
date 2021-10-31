@@ -12,12 +12,7 @@ Read the PDF file included in this repository to get the reader specifications a
 You'll be implmeneting this (and future) assignments by adding code to a Git repository. The first thing you need to 
 do is download and install a copy of [Git](https://git-scm.com/downloads).
 
-### Git on Windows
-If you're running on a Windows machine, you should execute `git config --system core.autocrlf false` to 
-make sure Git won't automatically change the line-ending format and break the testing script you use to test your
-work.
-
-Also, Hebrew text in Windows **WILL** break your vagrant setup (requiring a re-install). Make sure not to place your project in a 
+Note: Hebrew text in **WILL** break your vagrant setup (requiring a re-install in some cases). Make sure not to place your project in a 
 directory with Hewbrew characters in its path (i.e. the directory itself or a parent directory).
 
 ### Using Git
