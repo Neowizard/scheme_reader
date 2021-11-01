@@ -164,9 +164,12 @@ implementation and test cases)
 1. Bug must be explitable in an unmodified VM image as provided by the course staff on the course's Moodle page.
 
 ## Submission
+**To submit your code, you need to commit and push your woek to this repository and associate your repository with
+your BGU user**.
+
 When you push your work to the remote repository, you update the "main" branch for the remote repository. The latest 
 commit in your "main" branch at the time when the deadline expires will be your submitted work. 
 
-To associate your work with your BGU user, you'll need to submit a single file to the submission system. You should
+**To associate your work with your BGU user**, you'll need to submit a single file to the submission system. You should
 execute: `git remote get-url origin > submission`. This command will create a file called `submission` that conatins
 the URL to your repository. You should upload that file, and nothing else, to the submission system.
